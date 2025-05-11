@@ -24,16 +24,16 @@ function NewPlantForm({ onAddPlant }) {
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "Application/JSON"
       },
-      body: JSON.stringify(newPlant)
+      body: JSON.stringify(formData),
+  })
+    .then((res) => res.json())
+    .then((newPlant) => {
+      onAddPlant(newPlant)
+      setFormData({ name: "", image: "", price: "" })
     })
-      .then((res) => res.json())
-      .then((createdPlant) => {
-        onAddPlant(createdPlant)
-        setFormData({ name: "", image: "", price: "" })
-      })
-  }
+}
 
   return (
     <div className="new-plant-form">
