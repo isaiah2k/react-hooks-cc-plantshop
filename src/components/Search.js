@@ -7,7 +7,7 @@ function Search() {
       <input
         type="text"
         id="search"
-        placeholder="Type a name to search..."
+        placeholder="Type a name to search..." 
         onChange={(e) => console.log("Searching...")}
       />
     </div>
