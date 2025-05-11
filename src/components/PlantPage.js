@@ -1,3 +1,4 @@
+// src/components/PlantPage.js
 import React, { useEffect, useState } from "react"
 import NewPlantForm from "./NewPlantForm"
 import PlantList from "./PlantList"
@@ -12,9 +13,13 @@ function PlantPage() {
       .then(setPlants)
   }, [])
 
+  function addPlant(newPlant) {
+    setPlants([...plants, newPlant])
+  }
+
   return (
     <main>
-      <NewPlantForm />
+      <NewPlantForm onAddPlant={addPlant} />
       <Search />
       <PlantList plants={plants} />
     </main>
