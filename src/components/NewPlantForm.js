@@ -1,4 +1,3 @@
-// src/components/NewPlantForm.js
 import React, { useState } from "react"
 
 function NewPlantForm({ onAddPlant }) {
